@@ -19,6 +19,7 @@ internal class UserDeletion
             this.driver = driver;
             PageFactory.InitElements(driver, this);
         }
+
         [FindsBy(How = How.XPath, Using = "(//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name'])[1]")]
         private IWebElement admintab;
         [FindsBy(How = How.XPath, Using = "(//input[@class='oxd-input oxd-input--active'])[2]")]
@@ -27,39 +28,35 @@ internal class UserDeletion
         private IWebElement searchButton;
         [FindsBy(How = How.XPath, Using = "(//span[@class='oxd-checkbox-input oxd-checkbox-input--active --label-right oxd-checkbox-input'])[2]")]
         private IWebElement checkbox;
-        [FindsBy(How = How.XPath, Using = "//div[@class='oxd-form-row']/div/div[1]/div/div[2]/child::input")]
-        private IWebElement UsernameFilter;
-        [FindsBy(How = How.XPath, Using = "(//button[@type='button'])[7]")]
+        [FindsBy(How = How.XPath, Using = "(//div[contains(@class,'cell-actions')]/button[@type='button'][1]")]
         private IWebElement deleteUser;
-        [FindsBy(How = How.XPath, Using = "(//button[@type='button'])[10]")]
+        [FindsBy(How = How.XPath, Using = "(//div[contains(@class,'footer')]/button/i[contains(@class,'trash')]")]
         private IWebElement confirmdeleteUser;
         public IWebElement getAdminTab()
         {
             return admintab;
         }
-        public IWebElement getuserSearchr()
+        public void getuserSearchr(string abc)
         {
-            return userSearch;
+            userSearch.SendKeys(abc); ;
         }
         public IWebElement getsearchButton()
         {
             return searchButton;
         }
-        public IWebElement getUsernameFilter()
-        {
-            return UsernameFilter;
-        }
+       
+        
         public IWebElement getUserDeleted()
         {
             return checkbox;
         }
         public IWebElement getdeleteUser()
         {
-            return checkbox;
+            return deleteUser;
         }
-        public IWebElement getconfirmdeleteUserr()
+        public IWebElement getconfirmdeleteUser()
         {
-            return checkbox;
+            return confirmdeleteUser;
         }
 
 

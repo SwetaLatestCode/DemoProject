@@ -24,13 +24,13 @@ namespace OrangeHRM.Page_Objects
         private IWebElement AdminTab;
 
         [FindsBy(How = How.XPath, Using = "//div[@class='orangehrm-header-container']/button")]
-        //"//button[@class='oxd-button oxd-button--medium oxd-button--secondary']")]
+     
         private IWebElement AddUser;
 
         [FindsBy(How = How.XPath, Using = "//div[@class='oxd-select-text-input']")]
         private IWebElement DropdownUserRole;
 
-        //Search dropdown with Auto suggestions option
+      
         [FindsBy(How = How.XPath, Using = "//input[@placeholder='Type for hints...']")]
         private IWebElement Employeename;
 
@@ -42,7 +42,7 @@ namespace OrangeHRM.Page_Objects
         private IWebElement Status;
 
         [FindsBy(How = How.XPath, Using = "//div[@class='oxd-form-row']/div/div[4]/div/div[2]/child::input")]
-        //"//input [@class='oxd-input oxd-input--active'] and Text.Contains('autocomplete')")]//its not reading this line for xpath of above line  
+
         private IWebElement usernameTAB;
 
         [FindsBy(How = How.XPath, Using = "//input[@type='password'][1]")]

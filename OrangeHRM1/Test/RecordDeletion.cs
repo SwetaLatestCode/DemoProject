@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using OrangeHRM.Page_Objects;
 using OrangeHRM1;
 using System.IO;
+using static OrangeHRM.Page_Objects.UserDeletion;
 
 public class RecordDeletion : Base
 {
@@ -28,30 +29,16 @@ public class RecordDeletion : Base
 
         //Loginpage loginpage = new Loginpage(driver);
         //loginpage.validlogin("Admin", "admin123");
-
-        test.Log(Status.Info, "Usermanagement tab");
-        Add adminpage = new Add(driver);
-        adminpage.getAdminTab().Click();
-        test.Log(Status.Info, "Admin button clicked");
-
-        //GRID USERNAME FILD on Admin tab
-        Search_UsernameFilter usernameFilter = new Search_UsernameFilter(driver);
-        usernameFilter.getUsernameFilter().SendKeys("ABCDEFGH");
-        test.Log(Status.Info, "Admin value provided on usernameFilteronGRID");
-
-        //Click on Serach Button
-        usernameFilter.getSearchButton().Click();
-        test.Log(Status.Info, "Click on Serach button");
-        {
-
-        }
+        UserDeletionb ud = new UserDeletionb(driver);
+        ud.getAdminTab().Click();
+        ud.getuserSearchr("Amira.Stoltenberg");
+        ud.getsearchButton().Click();
+        ud.getUserDeleted().Click();
+        ud.getdeleteUser().Click();
+        ud.getconfirmdeleteUser().Click();
 
 
-
-        //RecordDeletion RecordDeletion = new RecordDeletion(driver);
-        //string usernameToDelete = "username_to_delete";
-        //RecordDeletion.RecordDeletion(usernameToDelete);
-        //test.Log(Status.Info, $"Deleted user '{usernameToDelete}'");
     }
 }
 
+        
