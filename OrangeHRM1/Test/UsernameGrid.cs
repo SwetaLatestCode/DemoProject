@@ -38,8 +38,8 @@ namespace OrangeHRM1.Tests
 
             //GRID USERNAME FILD on Admin tab
             Search_UsernameFilter usernameFilter = new Search_UsernameFilter(driver);
-            usernameFilter.getUsernameFilter().SendKeys("sweta");
-            test.Log(Status.Info, "sweta value provided on usernameFilteronGRID");
+            usernameFilter.getUsernameFilter().SendKeys("Admin");
+            test.Log(Status.Info, "Admin value provided on usernameFilteronGRID");
 
             //Click on Serach Button
             usernameFilter.getSearchButton().Click();
@@ -47,27 +47,28 @@ namespace OrangeHRM1.Tests
 
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[@class='oxd-text oxd-text--span']")));
-
+            bool validuser = usernameFilter.UserSearch.Displayed;
+            TestContext.WriteLine("Admin"+ validuser);
+            Assert.AreEqual(true,  validuser);
             // Asserting presence of data or no data based on the search
-            try
-            {
-                IWebElement noDataMessage = driver.FindElement(By.XPath("//span[contains(text(), 'No Records Found')]"));
-                Assert.IsNotNull(noDataMessage, "No data found for the username 'sweta'.");
-                test.Log(Status.Info, "No records found for the username 'sweta'. Assertion passed.");
-            }
-            catch (NoSuchElementException)
-            {
-                IList<IWebElement> rows = driver.FindElements(By.XPath("//span[@class='oxd-text oxd-text--span']"));
-                Assert.IsTrue(rows.Count > 0, "Data found for the username 'sweta'.");
-                test.Log(Status.Info, "Records found for the username 'sweta'. Assertion passed.");
+            //try
+            //{
+            //    IWebElement noDataMessage = driver.FindElement(By.XPath("//span[contains(text(), 'No Records Found')]"));
+            //    Assert.IsNotNull(noDataMessage, "No data found for the username 'sweta'.");
+            //    test.Log(Status.Info, "No records found for the username 'sweta'. Assertion passed.");
+            //}
+            //catch (NoSuchElementException)
+            //{
+            //    IList<IWebElement> rows = driver.FindElements(By.XPath("//span[@class='oxd-text oxd-text--span']"));
+            //    Assert.IsTrue(rows.Count > 0, "Data found for the username 'sweta'.");
+            //    test.Log(Status.Info, "Records found for the username 'sweta'. Assertion passed.");
 
 
 
 
 
 
-            }
+        }
 
         }
     }
-}

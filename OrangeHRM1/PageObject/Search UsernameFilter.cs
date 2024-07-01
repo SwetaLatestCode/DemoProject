@@ -26,7 +26,8 @@ namespace OrangeHRM.Page_Objects
         [FindsBy(How = How.XPath, Using = "//div[@class='oxd-form-actions']/button[2]")]
         private IWebElement SearchButton;
 
-
+        [FindsBy(How = How.XPath, Using = "(//div[text()='Admin'])[2]")]
+        public IWebElement UserSearch;
 
 
         public IWebElement getUsernameFilter()

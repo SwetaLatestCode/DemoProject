@@ -64,7 +64,7 @@ namespace OrangeHRM1.Tests
 
             //ENter the  Employeenamefield  dropdown
 
-            adminpage.Employeenamefield("Rahul  Das");
+            adminpage.Employeenamefield("AB");
             Thread.Sleep(TimeSpan.FromSeconds(2));
             adminpage.SelectFirstSuggestion();
             test.Log(Status.Info, " Rahul is input from search dropdown RahulDas selected");
@@ -94,8 +94,9 @@ namespace OrangeHRM1.Tests
             adminpage.getSavebutton().Click();
             test.Log(Status.Info, "Save button click");
 
-            Assert.Pass("Successfully saved");
-
+            bool uservalidate = adminpage.validateUser.Displayed;
+            TestContext.WriteLine("Sweta94 " + uservalidate);
+            Assert.AreEqual(true, uservalidate);
 
 
 

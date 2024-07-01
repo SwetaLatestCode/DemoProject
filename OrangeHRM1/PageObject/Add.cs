@@ -54,6 +54,9 @@ namespace OrangeHRM.Page_Objects
         [FindsBy(How = How.XPath, Using = "//button[@type='submit']")]
         private IWebElement Savebutton;
 
+        [FindsBy(How = How.XPath, Using = "//div[text()='Sweta94']")]
+        public IWebElement validateUser;
+
 
         public IWebElement getAdminTab()
         {

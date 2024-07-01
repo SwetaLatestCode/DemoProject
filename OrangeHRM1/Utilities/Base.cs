@@ -122,7 +122,7 @@ namespace OrangeHRM1
 
             }
             extent.Flush();
-            driver.Quit();
+           // driver.Quit();
         }
 
         public MediaEntityModelProvider CaptureScreenshot(IWebDriver driver,string screenshotName)
